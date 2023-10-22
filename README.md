@@ -1,2 +1,2 @@
 # jcalc
-Command-line calculator similar to the Python CLI in Java.
+GUI+CLI calculator similar to the Python CLI in Java.
