@@ -1,6 +1,11 @@
 public class Expression {
-     int[] num = new int[256];
-     char op;
+     int firstNumber;
+     int secondNumber;
+     char operator;
+     String expression;
+
      public Expression (String exp) {
+          this.expression = exp;
      }
+     
 }
