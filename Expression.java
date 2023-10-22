@@ -29,7 +29,7 @@ public class Expression {
                          break;
 
                }
-               
+
                if(charExpression[i] >= '0' && charExpression[i] <= '9') {
                     if (buildFirstNumber == true) {
                          firstNumber = firstNumber * 10 + Character.getNumericValue(charExpression[i]);
@@ -61,15 +61,4 @@ public class Expression {
           return result;
      }
 
-     public double getFirstNumber() {
-         return firstNumber;
-     }
-
-     public double getSecondNumber() {
-         return secondNumber;
-     }
-
-     public char getOperator() {
-         return operator;
-     }
 }
