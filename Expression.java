@@ -1,16 +1,19 @@
 public class Expression {
-     int firstNumber = 0;
-     int secondNumber = 0;
-     char operator;
-     String expression;
+     private double firstNumber;
+     private double secondNumber;
+     private char operator;
+     private String expression;
 
      public Expression (String exp) {
           this.expression = exp;
+          this.firstNumber = 0.0;
+          this.secondNumber = 0.0;
      }
 
      public void buildExpression() {
-          int dimension = expression.length();
           char[] charExpression = expression.toCharArray();
+          int dimension = charExpression.length;
+
           boolean buildFirstNumber = true;
           boolean buildSecondNumber = false;
 
@@ -29,16 +32,17 @@ public class Expression {
                
                if(charExpression[i] >= '0' && charExpression[i] <= '9') {
                     if (buildFirstNumber == true) {
-                         firstNumber = firstNumber * 10 + Integer.valueOf(charExpression[i]);
+                         firstNumber = firstNumber * 10 + Character.getNumericValue(charExpression[i]);
                     } else {
-                         secondNumber = secondNumber * 10 + Integer.valueOf(charExpression[i]);
+                         secondNumber = secondNumber * 10 + Character.getNumericValue(charExpression[i]);
                     }
                }
 
           }
      }
-     public float computeExpression () {
-          float result = 0;
+     public double computeExpression () {
+          double result = 0;
+
           switch (operator) {
                case '+':
                     result = firstNumber + secondNumber;
@@ -53,6 +57,19 @@ public class Expression {
                     result = firstNumber * secondNumber;
                     break;
           }
+
           return result;
+     }
+
+     public double getFirstNumber() {
+         return firstNumber;
+     }
+
+     public double getSecondNumber() {
+         return secondNumber;
+     }
+
+     public char getOperator() {
+         return operator;
      }
 }
