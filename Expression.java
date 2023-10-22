@@ -37,4 +37,22 @@ public class Expression {
 
           }
      }
+     public float computeExpression () {
+          float result = 0;
+          switch (operator) {
+               case '+':
+                    result = firstNumber + secondNumber;
+                    break;
+               case '-':
+                    result = firstNumber - secondNumber;
+                    break;
+               case '/':
+                    result = firstNumber / secondNumber;
+                    break;
+               case '*':
+                    result = firstNumber * secondNumber;
+                    break;
+          }
+          return result;
+     }
 }
